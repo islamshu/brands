@@ -134,7 +134,7 @@
             <div class="form-group col-md-6">
 
                 <div class="form-group">
-                    <input type="text" class="form-control" value="1" readonly name="" id="">
+                    <input type="text" class="form-control" value="{{ $trans_count }}" readonly name="" id="">
                 </div>
              </div>
           

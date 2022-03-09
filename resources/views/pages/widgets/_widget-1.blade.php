@@ -98,7 +98,9 @@
                 <div class="col-md-2 bg-light-success px-6 py-8 rounded-xl mr-7 mb-7">
                     {{ Metronic::getSVG("media/svg/icons/Communication/Add-user.svg", "svg-icon-3x svg-icon-primary d-block my-2") }}
                     <a href="#" class="text-primary font-weight-bold font-size-h6 mt-2">
-                        {{ __('Users') }}
+                        {{ __('Sales') }} <br>
+                        {{ auth()->user()->vendoruser->visitor  }}
+
 
                     </a>
                 </div>

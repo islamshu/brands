@@ -26,7 +26,7 @@
             @include('pages.widgets._widget-5', ['class' => 'card-stretch gutter-b'])
         </div> --}}
 
-        <div class="col-xxl-8 order-2 order-xxl-1">
+        {{-- <div class="col-xxl-8 order-2 order-xxl-1">
             @include('pages.widgets._widget-6', ['class' => 'card-stretch gutter-b'])
         </div>
 
@@ -40,7 +40,7 @@
 
         <div class="col-lg-12 col-xxl-4 order-1 order-xxl-2">
             @include('pages.widgets._widget-9', ['class' => 'card-stretch gutter-b'])
-        </div>
+        </div> --}}
     </div>
 
 @endsection

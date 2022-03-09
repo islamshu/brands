@@ -99,7 +99,8 @@
                     {{ Metronic::getSVG("media/svg/icons/Communication/Add-user.svg", "svg-icon-3x svg-icon-primary d-block my-2") }}
                     <a href="#" class="text-primary font-weight-bold font-size-h6 mt-2">
                         {{ __('Sales') }} <br>
-                        {{ auth()->user()->vendoruser->transaction->count()  }}
+                        {{ get_sales(auth()->user()->vendor_id)) }}
+                        
 
 
                     </a>
@@ -120,8 +121,9 @@
                 <div class="col-md-2 bg-light-warning px-6 py-8 rounded-xl mr-7 mb-7">
                     {{ Metronic::getSVG("media/svg/icons/Shopping/Chart-bar2.svg", "svg-icon-3x svg-icon-warning d-block my-2") }}
                     <a href="#" class="text-warning font-weight-bold font-size-h6">
-                        {{ __('Total customer saving') }}
-                    </a>
+                        {{ __('Month Transaction') }} <br>
+                        {{ App\Models\Transaction::where('vendor_id',auth()->user()->vendor_id)->whereMonth('created_at', \Carbon\Carbon::now('m')  }}
+                      </a>
                 </div>
                 <div class="col-md-2 bg-light-primary px-6 py-8 rounded-xl mr-7 mb-7">
                     {{ Metronic::getSVG("media/svg/icons/Communication/Outgoing-box.svg", "svg-icon-3x svg-icon-primary d-block my-2") }}

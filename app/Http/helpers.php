@@ -12,6 +12,13 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 
+ function get_sales($vendor_id)
+{
+    foreach(auth()->user()->vendoruser->transaction->get() as $trans){
+        dd($trans);
+        
+    }
+}
 function openJSONFile($code){
     $jsonString = [];
     if(File::exists(base_path('resources/lang/'.$code.'.json'))){

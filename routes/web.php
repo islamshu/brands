@@ -62,10 +62,10 @@ Route::group([
         //-----------------------Start Home Routes--------------------------
 
         Route::get('/home', [PagesController::class, 'index'])->name('home.index');
-        Route::get('sales',"Dashboard/SaleController@index")->name('get.sales');
 
         Route::get('upload-brands', "Dashboard\brandController@get_import")->name('get.import');
         Route::get('dawnload-brands', "Dashboard\brandController@download")->name('download.brands');
+        Route::get('sales','Dashboard\HomeController@sales')->name('get_sales');
 
         Route::post('import', "Dashboard\brandController@import")->name('post.import');
         Route::resource('country', Dashboard\CountryController::class);

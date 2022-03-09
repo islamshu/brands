@@ -26,6 +26,9 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function sales(){
+        return view('dashbord.repots.sales');
+    }
     function lang($local){
 
         $url = url()->previous();

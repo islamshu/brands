@@ -27,7 +27,7 @@ class HomeController extends Controller
         return view('home');
     }
     public function sales(){
-        return view('dashbord.repots.sales');
+        return view('dashboard.repots.sales');
     }
     function lang($local){
 

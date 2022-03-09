@@ -16,10 +16,11 @@ use Illuminate\Support\Facades\Http;
  function get_sales($vendor_id)
 {
     $transaction = Transaction::where('vendor_id',$vendor_id)->get();
+    $offers = [];
     foreach($transaction as $trans){
-        dd($trans);
-        
+        array_push($offers,$trans->offer_id);  
     }
+    dd($offers);
 }
 function openJSONFile($code){
     $jsonString = [];

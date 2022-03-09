@@ -47,7 +47,7 @@ class HomeController extends Controller
         }
         $max  = max(array_values($offer));
         $max_offer = array_keys($offer, $max);
-        dd($max);
+        dd($max_offer);
 
      
         $active_offer = Offer::whereIn('id',$offer)->where('end_time','>=',Carbon::now())->where('status',1)->count();

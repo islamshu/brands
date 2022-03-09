@@ -35,6 +35,7 @@ class HomeController extends Controller
 
         // }
         $trans = Transaction::where('vendor_id',698)->get();
+        $trans_count = Transaction::where('vendor_id',698)->count();
         $branch = [];
         $offer =[];
         foreach($trans as $tr){
@@ -46,7 +47,7 @@ class HomeController extends Controller
        $branches = count(array_unique($branch, SORT_REGULAR));
      
 
-        return view('dashboard.repots.sales', compact('request','branches','active_offer','finish_offer'));
+        return view('dashboard.repots.sales', compact('request','branches','active_offer','finish_offer','trans_count'));
     }
    
     function lang($local){

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Session;
 use Carbon\Carbon;
+use DB;
 
 class HomeController extends Controller
 {

@@ -44,7 +44,7 @@
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect01">
-                                    <i class="icon-calender"></i>
+                                    From
                                 </label>
                             </div>
                           <input type="date" placeholder="from" class="form-control" name="from">
@@ -55,7 +55,7 @@
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect01">
-                                    <i class="icon-calender"></i>
+                                    To
                                 </label>
                             </div>
                           <input type="date" class="form-control" name="to">

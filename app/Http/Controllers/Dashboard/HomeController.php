@@ -2,10 +2,13 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Offer;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Session;
+use Carbon\Carbon;
+
 class HomeController extends Controller
 {
     /**
@@ -38,6 +41,8 @@ class HomeController extends Controller
             array_push($branch,$tr->branch_id);
             array_push($offer,$tr->offer_id);
         }
+        $active_offer = Offer::whereIn('id',$offer)->where('end_time','>=',Carbon::now())->where('status',1)->count();
+        $finish_offer = Offer::whereIn('id',$offer)->where('end_time','>=',Carbon::now())->where('status',0)->count();
        $branches = count(array_unique($branch, SORT_REGULAR));
      
 

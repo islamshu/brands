@@ -71,9 +71,7 @@
             </div>
 
         </div>
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary mr-2">Submit</button>
-            </div>
+        
     </form>
 </div>
 

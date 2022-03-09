@@ -107,7 +107,11 @@
                 <div class="col-md-2  bg-light-danger px-6 py-8 rounded-xl mr-7 mb-7">
                     {{ Metronic::getSVG("media/svg/icons/Communication/Contact1.svg", "svg-icon-3x svg-icon-danger d-block my-2") }}
                     <a href="#" class="text-danger font-weight-bold font-size-h6 mt-2">
-                      {{ __('premium customers') }}
+                      {{ __('Day Transaction') }} <br>
+                      {{ auth()->user()->vendoruser->transaction->whereDate('created_at', Carbon::today())->count()  }}
+
+                      ;
+
                     </a>
                 </div>
             </div>

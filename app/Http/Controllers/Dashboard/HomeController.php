@@ -50,7 +50,7 @@ class HomeController extends Controller
         ->leftJoin('transactions','offers.id','=','transactions.offer_id')
         ->selectRaw('offers.*, COALESCE(sum(transactions.offer_id),0) offer_id')
         ->groupBy('offers.id')
-        ->orderBy('total','desc')
+        ->orderBy('offer_id')
         ->take(1)
         ->count();
         dd($best_offers);

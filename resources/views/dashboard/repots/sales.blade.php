@@ -150,7 +150,7 @@
             <div class="form-group col-md-6">
 
                 <div class="form-group">
-                    <input type="text" class="form-control" value="1" readonly name="" id="">
+                    <input type="text" class="form-control" value="{{ $finish_offer }}" readonly name="" id="">
                 </div>
              </div>
           
@@ -160,7 +160,7 @@
             <div class="form-group col-md-6 ">
 
                <div class="form-group">
-                   <input type="text" class="form-control" value="عدد العروض الفعالة المشتراة  " disabled name="" id="">
+                   <input type="text" class="form-control" value="{{ $active_offer }}" disabled name="" id="">
                </div>
             </div>
             <div class="form-group col-md-6">

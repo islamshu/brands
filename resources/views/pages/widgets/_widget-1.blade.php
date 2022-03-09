@@ -72,7 +72,7 @@
                     {{ Metronic::getSVG("media/svg/icons/General/Attachment1.svg", "svg-icon-3x svg-icon-warning d-block my-2") }}
                     <a href="#" class="text-warning font-weight-bold font-size-h6">
                         {{ __('Branch') }}<br>
-                        {{ App\Model\Branch::where('vendor_id',auth()->user()->vendor_id) }}
+                        {{ App\Models\Branch::where('vendor_id',auth()->user()->vendor_id) }}
                     </a>
                 </div>
                 @endif

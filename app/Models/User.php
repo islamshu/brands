@@ -73,6 +73,10 @@ class User extends  Authenticatable
     {
         return $this->hasOne(Vendor::class, 'vendor_id', 'id');
     }
+    public function vendoruser()
+    {
+        return $this->belongsTo(Vendor::class, 'vendor_id');
+    }
 
     public function terms_policies()
     {

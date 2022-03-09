@@ -89,7 +89,9 @@
                 <div class="col-md-2 bg-light-danger px-6 py-8 rounded-xl mr-7 mb-7">
                     {{ Metronic::getSVG("media/svg/icons/Communication/Flag.svg", "svg-icon-3x svg-icon-warning d-block my-2") }}
                     <a href="#" class="text-warning font-weight-bold font-size-h6">
-                        {{ __('Nationalities') }}
+                        {{ __('Visitor') }} <br>
+                        {{  }}
+
 
                     </a>
                 </div>

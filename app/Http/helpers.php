@@ -20,8 +20,8 @@ use Illuminate\Support\Facades\Http;
     foreach($transaction as $trans){
         array_push($offers,$trans->offer_id);  
     }
-    $offerscount = Offer::whereIn('id',$offers)->count();
-    dd($offerscount);
+    $offerscount = Offer::whereIn('id',$offers)->sum('price');
+    return $offerscount;
 }
 function openJSONFile($code){
     $jsonString = [];

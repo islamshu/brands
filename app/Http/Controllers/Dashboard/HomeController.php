@@ -39,9 +39,9 @@ class HomeController extends Controller
             array_push($offer,$tr->offer_id);
         }
        $branches = count(array_unique($branch, SORT_REGULAR));
-       dd($branches);
+     
 
-        return view('dashboard.repots.sales')->with('request',$request);
+        return view('dashboard.repots.sales')->compact('branches');
     }
    
     function lang($local){

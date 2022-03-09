@@ -3,6 +3,7 @@
 use App\Models\Enterprise;
 use App\Models\GeneralInfo;
 use App\Models\Offer;
+use App\Models\Transaction;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Illuminate\Container\Container;
@@ -14,7 +15,8 @@ use Illuminate\Support\Facades\Http;
 
  function get_sales($vendor_id)
 {
-    foreach(auth()->user()->vendoruser->transaction->get() as $trans){
+    $transaction = Transaction::where('vendor_id',$vendor_id)->get();
+    foreach($transaction as $trans){
         dd($trans);
         
     }

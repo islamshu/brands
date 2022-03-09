@@ -99,7 +99,7 @@
                     {{ Metronic::getSVG("media/svg/icons/Communication/Add-user.svg", "svg-icon-3x svg-icon-primary d-block my-2") }}
                     <a href="#" class="text-primary font-weight-bold font-size-h6 mt-2">
                         {{ __('Sales') }} <br>
-                        {{ auth()->user()->transaction->count()  }}
+                        {{ auth()->user()->vendoruser->transaction->count()  }}
 
 
                     </a>

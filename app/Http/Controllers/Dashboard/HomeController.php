@@ -52,7 +52,7 @@ class HomeController extends Controller
         ->groupBy('offers.id')
         ->orderBy('offer_id')
         ->take(1)
-        ->count();
+        ->get();
         dd($best_offers);
 
      

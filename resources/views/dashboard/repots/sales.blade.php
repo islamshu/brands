@@ -44,10 +44,10 @@
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect01">
-                                    <i class="icon-pencil"></i>
+                                    <i class="icon-calender"></i>
                                 </label>
                             </div>
-                          <input type="text" class="form-control" name="from">
+                          <input type="date" placeholder="from" class="form-control" name="from">
                         </div>
                         @if($errors->has('country_id'))
                         <p style="color: red">{{$errors->first('form')}}</p>
@@ -55,10 +55,10 @@
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect01">
-                                    <i class="icon-pencil"></i>
+                                    <i class="icon-calender"></i>
                                 </label>
                             </div>
-                          <input type="text" class="form-control" name="to">
+                          <input type="date" class="form-control" name="to">
                         </div>
                         @if($errors->has('to'))
                         <p style="color: red">{{$errors->first('to')}}</p>

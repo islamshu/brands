@@ -14,7 +14,8 @@
             </div>
         </div>
     </div>
-    <form method="post" action="{{route('get_sales.store',['locale'=>app()->getLocale()])}}">
+    {{-- {{route('get_sales.store',['locale'=>app()->getLocale()])}} --}}
+    <form method="post" action="">
         @csrf
         @if ($errors->any())
         <div class="alert alert-danger" role="alert">

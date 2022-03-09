@@ -124,32 +124,7 @@
                         {{ App\Models\Transaction::where('vendor_id',auth()->user()->vendor_id)->whereMonth('created_at', \Carbon\Carbon::now('m'))->count()  }}
                       </a>
                 </div>
-                <div class="col-md-2 bg-light-primary px-6 py-8 rounded-xl mr-7 mb-7">
-                    {{ Metronic::getSVG("media/svg/icons/Communication/Outgoing-box.svg", "svg-icon-3x svg-icon-primary d-block my-2") }}
-                    <a href="#" class="text-primary font-weight-bold font-size-h6 mt-2">
-                        {{ __('Best Brand') }}
-                    </a>
-                </div>
-                <div class="col-md-2 bg-light-danger px-6 py-8 rounded-xl mr-7 mb-7">
-                    {{ Metronic::getSVG("media/svg/icons/Communication/Send.svg", "svg-icon-3x svg-icon-warning d-block my-2") }}
-                    <a href="#" class="text-warning font-weight-bold font-size-h6">
-                        {{ __('Best Branch') }}
-
-                    </a>
-                </div>
-                <div class="col-md-2 bg-light-success px-6 py-8 rounded-xl mr-7 mb-7">
-                    {{ Metronic::getSVG("media/svg/icons/Communication/Clipboard-check.svg", "svg-icon-3x svg-icon-primary d-block my-2") }}
-                    <a href="#" class="text-primary font-weight-bold font-size-h6 mt-2">
-                        {{ __('Best Offer') }}
-
-                    </a>
-                </div>
-                <div class="col-md-2  bg-light-danger px-6 py-8 rounded-xl mr-7 mb-7">
-                    {{ Metronic::getSVG("media/svg/icons/Design/Layers.svg", "svg-icon-3x svg-icon-danger d-block my-2") }}
-                    <a href="#" class="text-danger font-weight-bold font-size-h6 mt-2">
-                        {{ __('All Action') }}
-                    </a>
-                </div>
+              
             </div>
             
             {{-- Row --}}

@@ -77,10 +77,7 @@ class User extends  Authenticatable
     {
         return $this->belongsTo(Vendor::class, 'vendor_id');
     }
-    public function transaction()
-    {
-        return $this->hasMany(Transaction::class, 'vendor_id');
-    }
+   
     /**
      * Get all of the comments for the User
      *

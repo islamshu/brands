@@ -21,6 +21,10 @@ class Vendor extends Model
     {
         return $this->hasOne(User::class, 'vendor_id', 'id');
     }
+    public function transaction()
+    {
+        return $this->hasMany(Transaction::class, 'vendor_id');
+    }
     /**
      * Get the user that owns the Vendor
      *

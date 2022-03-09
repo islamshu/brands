@@ -46,7 +46,7 @@ class HomeController extends Controller
        $branches = count(array_unique($branch, SORT_REGULAR));
      
 
-        return view('dashboard.repots.sales', compact('request','branches'));
+        return view('dashboard.repots.sales', compact('request','branches','active_offer','finish_offer'));
     }
    
     function lang($local){

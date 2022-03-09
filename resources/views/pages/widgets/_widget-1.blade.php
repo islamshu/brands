@@ -64,7 +64,7 @@
                     {{ Metronic::getSVG("media/svg/icons/General/Attachment1.svg", "svg-icon-3x svg-icon-warning d-block my-2") }}
                     <a href="#" class="text-warning font-weight-bold font-size-h6">
                         {{ __('Active Brand') }} <br>
-                        50
+                        
                     </a>
                 </div>
                 @else
@@ -72,6 +72,7 @@
                     {{ Metronic::getSVG("media/svg/icons/General/Attachment1.svg", "svg-icon-3x svg-icon-warning d-block my-2") }}
                     <a href="#" class="text-warning font-weight-bold font-size-h6">
                         {{ __('Active Branch') }}
+                        50
                     </a>
                 </div>
                 @endif

@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Http;
 
  function get_sales($vendor_id)
 {
-    // foreach(auth()->user()->vendoruser->transaction->get() as $trans){
-    //     dd($trans);
+    foreach(auth()->user()->vendoruser->transaction->get() as $trans){
+        dd($trans);
         
-    // }
+    }
 }
 function openJSONFile($code){
     $jsonString = [];

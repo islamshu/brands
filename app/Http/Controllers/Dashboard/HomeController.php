@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Session;
@@ -30,6 +31,16 @@ class HomeController extends Controller
         // if($request->from != null ||  $request->to != null ){
 
         // }
+        $trans = Transaction::where('vendor_id',698)->get();
+        $branch = [];
+        $offer =[];
+        foreach($trans as $tr){
+            array_push($branch,$tr->branch_id);
+            array_push($offer,$tr->offer_id);
+        }
+       $branches = array_unique($branch, SORT_REGULAR);
+       dd($branches);
+
         return view('dashboard.repots.sales')->with('request',$request);
     }
    

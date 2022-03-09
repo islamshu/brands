@@ -107,6 +107,166 @@
              </div>
           
         </div>
+        <div class="row col-md-12" >
+
+            <div class="form-group col-md-6 ">
+
+               <div class="form-group">
+                   <input type="text" class="form-control" value="مجموعة قيمة المشتريات" disabled name="" id="">
+               </div>
+            </div>
+            <div class="form-group col-md-6">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" value="1" readonly name="" id="">
+                </div>
+             </div>
+          
+        </div>
+        <div class="row col-md-12" >
+
+            <div class="form-group col-md-6 ">
+
+               <div class="form-group">
+                   <input type="text" class="form-control" value="عدد العمليات الكلي  " disabled name="" id="">
+               </div>
+            </div>
+            <div class="form-group col-md-6">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" value="1" readonly name="" id="">
+                </div>
+             </div>
+          
+        </div>
+        <div class="row col-md-12" >
+
+            <div class="form-group col-md-6 ">
+
+               <div class="form-group">
+                   <input type="text" class="form-control" value="عدد العروض الفعالة المنتهاة  " disabled name="" id="">
+               </div>
+            </div>
+            <div class="form-group col-md-6">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" value="1" readonly name="" id="">
+                </div>
+             </div>
+          
+        </div>
+        <div class="row col-md-12" >
+
+            <div class="form-group col-md-6 ">
+
+               <div class="form-group">
+                   <input type="text" class="form-control" value="عدد العروض الفعالة المشتراة  " disabled name="" id="">
+               </div>
+            </div>
+            <div class="form-group col-md-6">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" value="1" readonly name="" id="">
+                </div>
+             </div>
+          
+        </div>
+        <div class="row col-md-12" >
+
+            <div class="form-group col-md-6 ">
+
+               <div class="form-group">
+                   <input type="text" class="form-control" value="عدد الجنسيات المستفيدة    " disabled name="" id="">
+               </div>
+            </div>
+            <div class="form-group col-md-6">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" value="1" readonly name="" id="">
+                </div>
+             </div>
+          
+        </div>
+        <div class="row col-md-12" >
+
+            <div class="form-group col-md-6 ">
+
+               <div class="form-group">
+                   <input type="text" class="form-control" value="افضل فئة عمرية مستفيدة" disabled name="" id="">
+               </div>
+            </div>
+            <div class="form-group col-md-6">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" value="1" readonly name="" id="">
+                </div>
+             </div>
+          
+        </div>
+        <div class="row col-md-12" >
+
+            <div class="form-group col-md-6 ">
+
+               <div class="form-group">
+                   <input type="text" class="form-control" value="افضل فئة عمرية مشترية" disabled name="" id="">
+               </div>
+            </div>
+            <div class="form-group col-md-6">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" value="1" readonly name="" id="">
+                </div>
+             </div>
+          
+        </div>
+        <div class="row col-md-12" >
+
+            <div class="form-group col-md-6 ">
+
+               <div class="form-group">
+                   <input type="text" class="form-control" value="الجنسية الاكثر شراء  " disabled name="" id="">
+               </div>
+            </div>
+            <div class="form-group col-md-6">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" value="1" readonly name="" id="">
+                </div>
+             </div>
+          
+        </div>
+        <div class="row col-md-12" >
+
+            <div class="form-group col-md-6 ">
+
+               <div class="form-group">
+                   <input type="text" class="form-control" value="افضل عرض" disabled name="" id="">
+               </div>
+            </div>
+            <div class="form-group col-md-6">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" value="1" readonly name="" id="">
+                </div>
+             </div>
+          
+        </div>
+        <div class="row col-md-12" >
+
+            <div class="form-group col-md-6 ">
+
+               <div class="form-group">
+                   <input type="text" class="form-control" value="افضل فرع" disabled name="" id="">
+               </div>
+            </div>
+            <div class="form-group col-md-6">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" value="1" readonly name="" id="">
+                </div>
+             </div>
+          
+        </div>
 
     </div>
     

@@ -91,9 +91,9 @@
  
   
     <div class="card-body">
-        <div class="row">
+        <div class="row col-md-12" >
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-6 ">
 
                <div class="form-group">
                    <input type="text" value="عدد الفروع التي تم الشراء منها" disabled name="" id="">

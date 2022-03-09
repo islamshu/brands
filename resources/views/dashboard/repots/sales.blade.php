@@ -63,11 +63,14 @@
                         @if($errors->has('to'))
                         <p style="color: red">{{$errors->first('to')}}</p>
                         @endif
+                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+
                     </div>
                 </div>
               
             </div>
 
+        </div>
         <div class="card-footer">
             <button type="submit" class="btn btn-primary mr-2">Submit</button>
             </div>

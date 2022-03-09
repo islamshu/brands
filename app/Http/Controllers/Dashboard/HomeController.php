@@ -47,9 +47,9 @@ class HomeController extends Controller
             array_push($users,$tr->client_id);
         }
        $best_offers =  DB::table('offers')
-        ->leftJoin('transactions','offer.id','=','transactions.offer_id')
+        ->leftJoin('transactions','offers.id','=','transactions.offer_id')
         ->selectRaw('offers.*, COALESCE(sum(transactions.offer_id),0) total')
-        ->groupBy('offer.id')
+        ->groupBy('offers.id')
         ->orderBy('total','desc')
         ->take(1)
         ->count();

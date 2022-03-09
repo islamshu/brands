@@ -45,9 +45,14 @@ class HomeController extends Controller
             array_push($offer,$tr->offer_id);
             array_push($users,$tr->client_id);
         }
-        $max  = max(array_values($offer));
-        $max_offer = array_keys($offer, $max);
-        dd($max_offer);
+       $best_offers =  DB::table('offers')
+        ->leftJoin('transactions','offer.id','=','transactions.offer_id')
+        ->selectRaw('offers.*, COALESCE(sum(transactions.offer_id),0) total')
+        ->groupBy('offer.id')
+        ->orderBy('total','desc')
+        ->take(1)
+        ->count();
+        dd($best_offers);
 
      
         $active_offer = Offer::whereIn('id',$offer)->where('end_time','>=',Carbon::now())->where('status',1)->count();

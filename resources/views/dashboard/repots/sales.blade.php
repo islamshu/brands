@@ -176,13 +176,13 @@
             <div class="form-group col-md-6 ">
 
                <div class="form-group">
-                   <input type="text" class="form-control" value="عدد الجنسيات المستفيدة    " disabled name="" id="">
+                   <input type="text" class="form-control" value="عدد الجنسيات المستفيدة" disabled name="" id="">
                </div>
             </div>
             <div class="form-group col-md-6">
 
                 <div class="form-group">
-                    <input type="text" class="form-control" value="1" readonly name="" id="">
+                    <input type="text" class="form-control" value="{{ $natonalits }}" readonly name="" id="">
                 </div>
              </div>
           

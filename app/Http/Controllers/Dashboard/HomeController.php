@@ -26,9 +26,13 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function sales(){
-        return view('dashboard.repots.sales');
+    public function sales(Request $request){
+        // if($request->from != null ||  $request->to != null ){
+
+        // }
+        return view('dashboard.repots.sales')->with('request',$request);
     }
+   
     function lang($local){
 
         $url = url()->previous();

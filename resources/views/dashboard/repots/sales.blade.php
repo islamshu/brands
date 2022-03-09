@@ -14,9 +14,8 @@
             </div>
         </div>
     </div>
-    {{-- {{route('get_sales.store',['locale'=>app()->getLocale()])}} --}}
-    <form method="post" action="">
-        @csrf
+    <form method="get" action="{{route('get_sales.index',['locale'=>app()->getLocale()])}}">
+        
         @if ($errors->any())
         <div class="alert alert-danger" role="alert">
             <ul>
@@ -47,7 +46,7 @@
                                     From
                                 </label>
                             </div>
-                          <input type="date" placeholder="from" class="form-control" name="from">
+                          <input type="date" value="{{ $request->from }}" placeholder="from" class="form-control" name="from">
                         </div>
                         @if($errors->has('country_id'))
                         <p style="color: red">{{$errors->first('form')}}</p>
@@ -58,7 +57,7 @@
                                     To
                                 </label>
                             </div>
-                          <input type="date" class="form-control" name="to">
+                          <input type="date" value="{{ $request->to }}" class="form-control" name="to">
                         </div>
                         @if($errors->has('to'))
                         <p style="color: red">{{$errors->first('to')}}</p>

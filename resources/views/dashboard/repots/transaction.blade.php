@@ -116,7 +116,7 @@
                 @foreach ($trans as $item)
                 @php
                     $offer = App\Models\Offer::find($item->offer_id);
-                    $client = App\Models\Client::find($item->client_id);
+                    $client = App\Models\Clinet::find($item->client_id);
                 @endphp
                     <td>{{ @$offer->name_en }}</td>
                     <td>{{ @$offer->offertype->offer_type }}</td>

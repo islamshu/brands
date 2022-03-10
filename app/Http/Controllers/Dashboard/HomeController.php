@@ -86,10 +86,15 @@ class HomeController extends Controller
         }else{
             $count_branch = 0;
         }
-        if($most_nat != '[]' &&$most_nat[0] != null){
+        if($most_nat != '[]'){
             // dd($most_nat);
-            $natonalitss = array_count_values($most_nat);
-            arsort($natonalitss);
+            if($most_nat[0] != null){
+                $natonalitss = array_count_values($most_nat);
+                arsort($natonalitss);
+            }else{
+                $natonalitss = 0;
+            }
+         
         }else{
             $natonalitss = 0;
         }

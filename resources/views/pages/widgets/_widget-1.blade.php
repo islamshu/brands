@@ -90,7 +90,8 @@
                     {{ Metronic::getSVG("media/svg/icons/Communication/Flag.svg", "svg-icon-3x svg-icon-warning d-block my-2") }}
                     <a href="#" class="text-warning font-weight-bold font-size-h6">
                         {{ __('Visitor') }} <br>
-                        {{ App\Models\Vendor::find('id',auth()->user()->vendor_id)->visitor }}
+                        {{ dd(auth()->user()->vendor_id) }}
+                        {{ App\Models\Vendor::find(auth()->user()->vendor_id)->visitor }}
 
 
 

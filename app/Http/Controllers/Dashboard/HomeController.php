@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Config;
 use Session;
 use Carbon\Carbon;
 use DB;
+use Facade\FlareClient\Http\Client;
 
 class HomeController extends Controller
 {
@@ -46,6 +47,12 @@ class HomeController extends Controller
             array_push($offer,$tr->offer_id);
             array_push($users,$tr->client_id);
         }
+        
+        $clients = Client::whereIn('id',$users)->get();
+        $most_nat = [];
+        foreach($clients as $client){
+            array_push($most_nat,$client->nationality);
+        }
     //    $best_offers =  DB::table('offers')
     //     ->leftJoin('transactions','offers.id','=','transactions.offer_id')
     //     ->selectRaw('offers.*, COALESCE(sum(transactions.offer_id),0) offer_id')
@@ -60,8 +67,12 @@ class HomeController extends Controller
         arsort($counts);
         $count_branch = array_count_values($branch);
         arsort($count_branch);
+        $natonalitss = array_count_values($most_nat);
+        arsort($natonalitss);
         $most_offer_use = key($counts);
         $most_branch_use = key($count_branch);
+        $most_natonalities_use = key($natonalitss);
+        dd($most_natonalities_use);
 
 
      

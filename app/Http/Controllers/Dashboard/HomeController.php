@@ -130,7 +130,7 @@ class HomeController extends Controller
         return view('dashboard.repots.sales', compact('most_natonalities_use','sale_count','request','branches','active_offer','finish_offer','trans_count','natonalits','most_offer_use','most_branch_use'));
     }
     public function transaction(Request $request){
-        $query = Transaction::query()->where('vendor_id',auth()->id);
+        $query = Transaction::query()->where('vendor_id',auth()->user()->vendor_id);
         $query->when($request->referance, function ($q) use ($request) {  
             return $q->where('refreance_number', $request->referance);
         });

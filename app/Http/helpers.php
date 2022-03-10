@@ -28,6 +28,11 @@ use Illuminate\Support\Facades\Http;
     $transaction = Transaction::where('branch_id',$id)->count();
     return $transaction;
 }
+function get_sum_trnasaction($id)
+{
+    $transaction = Transaction::where('branch_id',$id)->sum('price');
+    return $transaction;
+}
 function openJSONFile($code){
     $jsonString = [];
     if(File::exists(base_path('resources/lang/'.$code.'.json'))){

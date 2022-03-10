@@ -37,7 +37,7 @@
               
                     <td>{{ $item->name_ar }}</td>
                     <td>{{ get_totol_trnasaction($item->id) }}</td>
-                    <td></td>
+                    <td>{{ get_sum_trnasaction($item->id) }}</td>
                   
 
                    

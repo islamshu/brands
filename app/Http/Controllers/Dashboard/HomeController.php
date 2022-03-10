@@ -83,10 +83,21 @@ class HomeController extends Controller
         
      
         
-   
-        $most_offer_use = key($counts);
-        $most_branch_use = key($count_branch);
-        $most_natonalities_use = key($natonalitss);
+        if($counts == 0){
+            $most_offer_use = 0; 
+        }else{
+            $most_offer_use = key($counts);
+        }
+        if($count_branch == 0){
+            $most_branch_use = 0; 
+        }else{
+            $most_branch_use = key($count_branch);
+        }
+        if($natonalitss == 0){
+            $most_natonalities_use = 0; 
+        }else{
+            $most_natonalities_use = key($natonalitss);
+        }
         
 
 

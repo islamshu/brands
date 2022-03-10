@@ -174,7 +174,7 @@ class UserController extends Controller
 
             return response()->view('dashboard.users.edit',compact('venders','rols','user')); 
         }elseif(Auth::user()->hasRole('Vendors')){
-            $rols = Role::get();
+            $rols = Role::where('vendor_id',auth()->user()->vendor_id)->get();
             $user = User::find($id);
 
             return response()->view('dashboard.users.edit',compact('rols')) ;

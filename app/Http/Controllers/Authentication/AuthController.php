@@ -70,11 +70,14 @@ class AuthController extends Controller
         {
             if(Auth::attempt(['email'=>$request->email,'password'=>$request->password]))
             {
+                dd(Auth::user()->hasRole('vendor'));
                  if(Auth::user()->hasRole('vendor')){
+                     dd('dd');
                     return Redirect::route('home.index',['locale'=>app()->getLocale()]);
                  }
-                 return Redirect::route('dashboard.auth.login',['locale'=>app()->getLocale()]);
+                 dd('ddd');
 
+                 return Redirect::route('dashboard.auth.login',['locale'=>app()->getLocale()]);
             }
             else
             {

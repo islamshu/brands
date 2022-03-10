@@ -62,6 +62,7 @@ class UserController extends Controller
             $rols = Role::where('ent_id',auth()->user()->ent_id)->get();
             return response()->view('dashboard.users.create',compact('venders','rols')); 
         }elseif(Auth::user()->hasRole('Vendors')){
+            dd('dd');
             $rols = Role::where('vendor_id',Auth::user()->vendor_id)->get();
             return response()->view('dashboard.users.create',compact('rols')) ;
         }

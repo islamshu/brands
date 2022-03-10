@@ -59,7 +59,7 @@
         <div class="card-spacer mt-n25">
             {{-- Row --}}
             <div class="row m-0">
-               @if(auth()->user()->hasRole('Enterprises'))
+               @if(@auth()->user()->hasRole('Enterprises'))
                 <div class="col-md-2 bg-light-warning px-6 py-8 rounded-xl mr-7 mb-7">
                     {{ Metronic::getSVG("media/svg/icons/General/Attachment1.svg", "svg-icon-3x svg-icon-warning d-block my-2") }}
                     <a href="#" class="text-warning font-weight-bold font-size-h6">
@@ -73,7 +73,7 @@
                     <a href="#" class="text-warning font-weight-bold font-size-h6">
                         {{ __('Branch') }}<br>
                         
-                        {{ App\Models\Branch::where('vendor_id',auth()->user()->vendor_id)->count() }}
+                        {{ App\Models\Branch::where('vendor_id',@auth()->user()->vendor_id)->count() }}
                     </a>
                 </div>
                 @endif
@@ -81,7 +81,7 @@
                     {{ Metronic::getSVG("media/svg/icons/Communication/Address-card.svg", "svg-icon-3x svg-icon-primary d-block my-2") }}
                     <a href="#" class="text-primary font-weight-bold font-size-h6 mt-2">
                         {{ __('orders') }} <br>
-                        {{ App\Models\Offer::where('vendor_id',auth()->user()->vendor_id)->count() }}
+                        {{ App\Models\Offer::where('vendor_id',@auth()->user()->vendor_id)->count() }}
 
 
                     </a>
@@ -90,7 +90,7 @@
                     {{ Metronic::getSVG("media/svg/icons/Communication/Flag.svg", "svg-icon-3x svg-icon-warning d-block my-2") }}
                     <a href="#" class="text-warning font-weight-bold font-size-h6">
                         {{ __('Visitor') }} <br>
-                        {{ auth()->user()->vendoruser->visitor  }}
+                        {{ @auth()->user()->vendoruser->visitor  }}
 
 
                     </a>
@@ -99,7 +99,7 @@
                     {{ Metronic::getSVG("media/svg/icons/Communication/Add-user.svg", "svg-icon-3x svg-icon-primary d-block my-2") }}
                     <a href="#" class="text-primary font-weight-bold font-size-h6 mt-2">
                         {{ __('Sales') }} <br>
-                        {{ App\Models\Transaction::where('vendor_id',auth()->user()->vendor_id)->sum('price') }}
+                        {{ App\Models\Transaction::where('vendor_id',@auth()->user()->vendor_id)->sum('price') }}
 
 
                     </a>
@@ -108,7 +108,7 @@
                     {{ Metronic::getSVG("media/svg/icons/Communication/Contact1.svg", "svg-icon-3x svg-icon-danger d-block my-2") }}
                     <a href="#" class="text-danger font-weight-bold font-size-h6 mt-2">
                       {{ __('Day Transaction') }} <br>
-                      {{ App\Models\Transaction::where('vendor_id',auth()->user()->vendor_id)->whereDate('created_at', \Carbon\Carbon::today())->count()  }}
+                      {{ App\Models\Transaction::where('vendor_id',@auth()->user()->vendor_id)->whereDate('created_at', \Carbon\Carbon::today())->count()  }}
 
                       
 
@@ -121,7 +121,7 @@
                     {{ Metronic::getSVG("media/svg/icons/Shopping/Chart-bar2.svg", "svg-icon-3x svg-icon-warning d-block my-2") }}
                     <a href="#" class="text-warning font-weight-bold font-size-h6">
                         {{ __('Month Transaction') }} <br>
-                        {{ App\Models\Transaction::where('vendor_id',auth()->user()->vendor_id)->whereMonth('created_at', \Carbon\Carbon::now('m'))->count()  }}
+                        {{ App\Models\Transaction::where('vendor_id',@auth()->user()->vendor_id)->whereMonth('created_at', \Carbon\Carbon::now('m'))->count()  }}
                       </a>
                 </div>
               

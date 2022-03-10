@@ -43,10 +43,14 @@ class HomeController extends Controller
         $branch = [];
         $offer =[];
         $users =[];
+        $sales =[];
         foreach($trans as $tr){
             array_push($branch,$tr->branch_id);
             array_push($offer,$tr->offer_id);
             array_push($users,$tr->client_id);
+            if($tr->offer_type != null && $tr->offer_type != 'general_offer'){
+                array_push($sales ,$tr->price);
+            }
         }
         
         $clients = Clinet::whereIn('id',$users)->get();
@@ -54,6 +58,7 @@ class HomeController extends Controller
         foreach($clients as $client){
             array_push($most_nat,$client->nationality);
         }
+      
     //    $best_offers =  DB::table('offers')
     //     ->leftJoin('transactions','offers.id','=','transactions.offer_id')
     //     ->selectRaw('offers.*, COALESCE(sum(transactions.offer_id),0) offer_id')
@@ -110,9 +115,11 @@ class HomeController extends Controller
         $branches = count(array_unique($branch, SORT_REGULAR));
         $uniqeuser = (array_unique($users, SORT_REGULAR));
         $natonalits = Clinet::whereIn('id',$uniqeuser)->where('nationality','!=',null)->count();
+        $sale_count = (array_sum ($sales));
+       
 
 
-        return view('dashboard.repots.sales', compact('most_natonalities_use','request','branches','active_offer','finish_offer','trans_count','natonalits','most_offer_use','most_branch_use'));
+        return view('dashboard.repots.sales', compact('most_natonalities_use','sale_count','request','branches','active_offer','finish_offer','trans_count','natonalits','most_offer_use','most_branch_use'));
     }
    
     function lang($local){

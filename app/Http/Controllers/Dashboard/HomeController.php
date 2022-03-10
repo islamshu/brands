@@ -58,7 +58,7 @@ class HomeController extends Controller
 
         $counts = array_count_values($offer);
         arsort($counts);
-        $count_branch = array_count_values($obranchfer);
+        $count_branch = array_count_values($branch);
         arsort($count_branch);
         $most_offer_use = key($counts);
         $most_branch_use = key($count_branch);

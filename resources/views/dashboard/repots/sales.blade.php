@@ -246,7 +246,7 @@
             <div class="form-group col-md-6">
 
                 <div class="form-group">
-                    <input type="text" class="form-control" value="1" readonly name="" id="">
+                    <input type="text" class="form-control" value="{{ App\Models\Offer::find($most_offer_use)->name_ar }}" readonly name="" id="">
                 </div>
              </div>
           
@@ -262,7 +262,7 @@
             <div class="form-group col-md-6">
 
                 <div class="form-group">
-                    <input type="text" class="form-control" value="1" readonly name="" id="">
+                    <input type="text" class="form-control" value="{{ App\Models\Branch::find($most_branch_use)->name_ar }}" readonly name="" id="">
                 </div>
              </div>
           

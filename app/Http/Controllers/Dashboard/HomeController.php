@@ -55,11 +55,13 @@ class HomeController extends Controller
     //     ->get();
     //     dd($best_offers);
 
-    $array = array(1, 1, 1, 4, 3, 1);
 
         $counts = array_count_values($offer);
         arsort($counts);
-        dd( key($counts));
+        $count_branch = array_count_values($obranchfer);
+        arsort($count_branch);
+        $most_offer_use = key($counts);
+        $most_branch_use = key($count_branch);
 
 
      
@@ -70,7 +72,7 @@ class HomeController extends Controller
         $natonalits = Clinet::whereIn('id',$uniqeuser)->where('nationality','!=',null)->count();
 
 
-        return view('dashboard.repots.sales', compact('request','branches','active_offer','finish_offer','trans_count','natonalits'));
+        return view('dashboard.repots.sales', compact('request','branches','active_offer','finish_offer','trans_count','natonalits','most_offer_use','most_branch_use'));
     }
    
     function lang($local){

@@ -48,7 +48,7 @@ class HomeController extends Controller
             array_push($users,$tr->client_id);
         }
         
-        $clients = Client::whereIn('id',$users)->get();
+        $clients = Clinet::whereIn('id',$users)->get();
         $most_nat = [];
         foreach($clients as $client){
             array_push($most_nat,$client->nationality);

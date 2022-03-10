@@ -37,6 +37,7 @@ class HomeController extends Controller
         // if($request->from != null ||  $request->to != null ){
 
         // }
+        dd(auth()->user()->vendor_id);
         $trans = Transaction::where('vendor_id',auth()->user()->vendor_id)->get();
         $trans_count = Transaction::where('vendor_id',auth()->user()->vendor_id)->count();
         $branch = [];

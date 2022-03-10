@@ -62,7 +62,7 @@ class UserController extends Controller
             $rols = Role::where('ent_id',auth()->user()->ent_id)->get();
             return response()->view('dashboard.users.create',compact('venders','rols')); 
         }elseif(Auth::user()->hasRole('Vendors')){
-            $rols = Role::get();
+            $rols = Role::where('vendor_id',Auth::user()->vendor_id)->get();
             return response()->view('dashboard.users.create',compact('rols')) ;
         }
     }
@@ -107,9 +107,22 @@ class UserController extends Controller
             $user->email = $request->email;
             $user->address = $request->address;
             $user->last_ip= '';
+            $user->vendor_id = auth()->user()->vendor_id;
             $user->Save();
             $role = Role::where('name', $request->role)->first();
             
+            $user->attachRole($role);
+           $permissions= permission_role::where('role_id',$role->id)->get();
+            
+            foreach ($permissions as $one_permission) {
+                $per = new user_Permission();
+                $per->user_id = $user->id;
+                $per->permission_id = $one_permission->permission_id;
+                $per->save();
+                // $user->attachPermission($one_permission);
+            }
+            $role = Role::find(3);
+
             $user->attachRole($role);
            $permissions= permission_role::where('role_id',$role->id)->get();
             

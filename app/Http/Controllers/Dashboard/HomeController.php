@@ -67,7 +67,7 @@ class HomeController extends Controller
         arsort($counts);
         $count_branch = array_count_values($branch);
         arsort($count_branch);
-        dd($most_nat);
+        
         $natonalitss = array_count_values($most_nat);
         arsort($natonalitss);
         $most_offer_use = key($counts);

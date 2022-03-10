@@ -35,7 +35,7 @@ class HomeController extends Controller
     }
     public function sales(Request $request){
         if($request->from != null ||  $request->to != null ){
-            dd($request->form ,$request->to);
+            dd($request->from ,$request->to);
             $trans = Transaction::where('vendor_id',auth()->user()->vendor_id)->whereBetween('created_at', [$request->from, $request->to])->get();
             $trans_count = Transaction::where('vendor_id',auth()->user()->vendor_id)->whereBetween('created_at', [$request->from, $request->to])->count();
         }else{

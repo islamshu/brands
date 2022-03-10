@@ -129,8 +129,19 @@ class HomeController extends Controller
 
         return view('dashboard.repots.sales', compact('most_natonalities_use','sale_count','request','branches','active_offer','finish_offer','trans_count','natonalits','most_offer_use','most_branch_use'));
     }
+    public function branch_repots()
+    {
+        $transa = Transaction::where('vendor_id',698)->get();
+        $branchs=[];
+        foreach($transa as $tr){
+            array_push($branchs,$tr->branch_id);
+        }
+        $branche_is = array_unique($branchs);
+        $brs = Branch::whereIn('id',$branche_is)->get();
+        return view('dashboard.repots.branches',compact('brs'));
+    }
     public function transaction(Request $request){
-        $query = Transaction::query()->where('vendor_id',698);
+        $query = Transaction::query()->where('vendor_id',auth()->user()->vendor_id);
         $query->when($request->referance, function ($q) use ($request) {  
             return $q->where('refreance_number', $request->referance);
         });
@@ -147,7 +158,7 @@ class HomeController extends Controller
             }
         });
         $trans = $query->get();
-        $branches = Branch::where('vendor_id',698)->get();
+        $branches = Branch::where('vendor_id',auth()->user()->vendor_id)->get();
         return view('dashboard.repots.transaction',compact('request','trans','branches'));
     }
     

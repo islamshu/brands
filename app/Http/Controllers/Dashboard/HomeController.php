@@ -35,8 +35,8 @@ class HomeController extends Controller
     }
     public function sales(Request $request){
         if($request->from != null ||  $request->to != null ){
-            $trans = Transaction::where('vendor_id',auth()->user()->vendor_id)->whereBetween('reservation_from', [$request->from, $request->to])->get();
-            $trans_count = Transaction::where('vendor_id',auth()->user()->vendor_id)->whereBetween('reservation_from', [$request->from, $request->to])->count();
+            $trans = Transaction::where('vendor_id',auth()->user()->vendor_id)->whereBetween('created_at', [$request->from, $request->to])->get();
+            $trans_count = Transaction::where('vendor_id',auth()->user()->vendor_id)->whereBetween('created_at', [$request->from, $request->to])->count();
         }else{
             $trans = Transaction::where('vendor_id',auth()->user()->vendor_id)->get();
             $trans_count = Transaction::where('vendor_id',auth()->user()->vendor_id)->count();

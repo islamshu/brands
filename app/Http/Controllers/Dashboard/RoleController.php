@@ -39,7 +39,7 @@ class RoleController extends Controller
             // $roles = user_roles::where('user_id', Auth::user()->id)->with('role')->get();
             return view('dashboard.role.index', compact('roles'));
         } elseif (Auth::user()->hasRole('Vendors')) {
-           $roles = user_roles::where('user_id', Auth::user()->id)->with('role')->get();
+            $roles = Role::where('vendor_id',auth()->user()->vendor_id)->get();
             return view('dashboard.role.index', compact('roles'));
         }
     }

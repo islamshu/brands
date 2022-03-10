@@ -34,9 +34,13 @@ class HomeController extends Controller
         return view('home');
     }
     public function sales(Request $request){
-        // if($request->from != null ||  $request->to != null ){
-
-        // }
+        if($request->from != null ||  $request->to != null ){
+            $trans = Transaction::where('vendor_id',auth()->user()->vendor_id)->whereBetween('reservation_from', [$request->from, $request->to])->get();
+            $trans_count = Transaction::where('vendor_id',auth()->user()->vendor_id)->whereBetween('reservation_from', [$request->from, $request->to])->count();
+        }else{
+            $trans = Transaction::where('vendor_id',auth()->user()->vendor_id)->get();
+            $trans_count = Transaction::where('vendor_id',auth()->user()->vendor_id)->count();
+        }
         // dd(auth()->user()->vendor_id);
         $trans = Transaction::where('vendor_id',auth()->user()->vendor_id)->get();
         $trans_count = Transaction::where('vendor_id',auth()->user()->vendor_id)->count();

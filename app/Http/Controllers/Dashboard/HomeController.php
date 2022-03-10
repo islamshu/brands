@@ -23,7 +23,13 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-    }
+
+        //create read update delete
+        $this->middleware(['permission:sale-repots'])->only('sales');
+        $this->middleware(['permission:transaction-repots'])->only('transaction');
+        $this->middleware(['permission:branches-repots'])->only('branch_repots');
+
+    }//end of constructor
 
     /**
      * Show the application dashboard.

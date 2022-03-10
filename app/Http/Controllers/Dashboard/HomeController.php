@@ -66,7 +66,7 @@ class HomeController extends Controller
 
      
         $active_offer = Offer::whereIn('id',$offer)->where('end_time','>=',Carbon::now())->where('status',1)->count();
-        $finish_offer = Offer::whereIn('id',$offer)->where('end_time','>=',Carbon::now())->where('status',0)->count();
+        $finish_offer = Offer::whereIn('id',$offer)->where('end_time','<=',Carbon::now())->where('status',0)->count();
         $branches = count(array_unique($branch, SORT_REGULAR));
         $uniqeuser = (array_unique($users, SORT_REGULAR));
         $natonalits = Clinet::whereIn('id',$uniqeuser)->where('nationality','!=',null)->count();

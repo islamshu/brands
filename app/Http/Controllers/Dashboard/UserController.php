@@ -36,7 +36,7 @@ class UserController extends Controller
         }elseif(Auth::user()->hasRole('Enterprises') || auth()->user()->hasPermission('read-user')){
             $users = User::where('ent_id',Auth::user()->ent_id)->get();
         }elseif(Auth::user()->hasRole('Vendors')){
-            $users = User::where('vendor_id',Auth::user()->vendor_id)->get();
+            $users = User::whereRoleIs('Vendors')->where('vendor_id',auth()->user()->vendor_id)->get();
         }
         return response()->view('dashboard.users.index', compact('users'));
 

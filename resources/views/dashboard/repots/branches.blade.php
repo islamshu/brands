@@ -36,7 +36,7 @@
                 @foreach ($brs as $item)
               
                     <td>{{ $item->name_ar }}</td>
-                    <td></td>
+                    <td>{{ get_totol_trnasaction($item->id) }}</td>
                     <td></td>
                   
 

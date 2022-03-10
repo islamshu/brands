@@ -23,6 +23,11 @@ use Illuminate\Support\Facades\Http;
     $offerscount = Offer::whereIn('id',$offers)->sum('price');
     return $offerscount;
 }
+ function get_totol_trnasaction($id)
+{
+    $transaction = Transaction::where('branch_id',$id)->count();
+    return $transaction;
+}
 function openJSONFile($code){
     $jsonString = [];
     if(File::exists(base_path('resources/lang/'.$code.'.json'))){

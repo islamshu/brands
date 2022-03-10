@@ -316,20 +316,24 @@ $lang = app()->getLocale();
                 <li class="menu-item  menu-item-parent" aria-haspopup="true"><span class="menu-link"><span
                             class="menu-text">{{ __('Repots') }}</span></span>
                 </li>
+                @if (auth()->user()->isAbleTo(['sale-repots']))
+                    <li class="menu-item " aria-haspopup="true"><a href="/{{ $lang }}/sales"
+                            class="menu-link "><i class="menu-bullet menu-bullet-dot"><span></span></i><span
+                                class="menu-text">{{ __('Total Transaction repots') }}</span></a></li>
+                @endif
+                @if (auth()->user()->isAbleTo(['transaction-repots']))
+                    <li class="menu-item " aria-haspopup="true"><a href="/{{ $lang }}/transaction_repots"
+                            class="menu-link "><i class="menu-bullet menu-bullet-dot"><span></span></i><span
+                                class="menu-text">{{ __('Purchases details') }}</span></a></li>
+                @endif
+                @if (auth()->user()->isAbleTo(['branches-repots']))
+                    <li class="menu-item " aria-haspopup="true"><a href="/{{ $lang }}/branchs_repots"
+                            class="menu-link "><i class="menu-bullet menu-bullet-dot"><span></span></i><span
+                                class="menu-text">{{ __('Branch repots') }}</span></a></li>
+                @endif
 
-                <li class="menu-item " aria-haspopup="true"><a href="/{{ $lang }}/sales"
-                        class="menu-link "><i class="menu-bullet menu-bullet-dot"><span></span></i><span
-                            class="menu-text">{{ __('Total Transaction repots') }}</span></a></li>
-                            <li class="menu-item " aria-haspopup="true"><a href="/{{ $lang }}/transaction_repots"
-                                
-                                class="menu-link "><i class="menu-bullet menu-bullet-dot"><span></span></i><span
-                                    class="menu-text">{{ __('Purchases details') }}</span></a></li>
-                                    <li class="menu-item " aria-haspopup="true"><a href="/{{ $lang }}/branchs_repots"
-                                        class="menu-link "><i class="menu-bullet menu-bullet-dot"><span></span></i><span
-                                            class="menu-text">{{ __('Branch repots') }}</span></a></li>
 
-                                    
-      
+
 
 
             </ul>

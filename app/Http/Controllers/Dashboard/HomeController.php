@@ -131,7 +131,7 @@ class HomeController extends Controller
     }
     public function branch_repots()
     {
-        $transa = Transaction::where('vendor_id',698)->get();
+        $transa = Transaction::where('vendor_id',auth()->user()->vendor_id)->get();
         $branchs=[];
         foreach($transa as $tr){
             array_push($branchs,$tr->branch_id);

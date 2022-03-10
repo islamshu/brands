@@ -314,24 +314,16 @@ $lang = app()->getLocale();
         <div class="menu-submenu " kt-hidden-height="80" style=""><span class="menu-arrow"></span>
             <ul class="menu-subnav">
                 <li class="menu-item  menu-item-parent" aria-haspopup="true"><span class="menu-link"><span
-                            class="menu-text">{{ __('Notofication') }}</span></span>
+                            class="menu-text">{{ __('Repots') }}</span></span>
                 </li>
 
-                <li class="menu-item " aria-haspopup="true"><a href="/{{ $lang }}/general_notofication"
+                <li class="menu-item " aria-haspopup="true"><a href="/{{ $lang }}/sales"
                         class="menu-link "><i class="menu-bullet menu-bullet-dot"><span></span></i><span
-                            class="menu-text">{{ __('General Notofication') }}</span></a></li>
-                <li class="menu-item " aria-haspopup="true"><a
-                        href="/{{ $lang }}/create_user_notofication" class="menu-link "><i
-                            class="menu-bullet menu-bullet-dot"><span></span></i><span
-                            class="menu-text">{{ __('Custom Notofication') }}</span></a></li>
-                <li class="menu-item " aria-haspopup="true"><a
-                        href="/{{ $lang }}/create_city_notofication" class="menu-link "><i
-                            class="menu-bullet menu-bullet-dot"><span></span></i><span
-                            class="menu-text">{{ __('City Notofication') }}</span></a></li>
-                <li class="menu-item " aria-haspopup="true"><a
-                        href="/{{ $lang }}/create_gender_notofication" class="menu-link "><i
-                            class="menu-bullet menu-bullet-dot"><span></span></i><span
-                            class="menu-text">{{ __('Gender Notofication') }}</span></a></li>
+                            class="menu-text">{{ __('Total Transaction repots') }}</span></a></li>
+                            <li class="menu-item " aria-haspopup="true"><a href="/{{ $lang }}/transaction_repots"
+                                class="menu-link "><i class="menu-bullet menu-bullet-dot"><span></span></i><span
+                                    class="menu-text">{{ __('Purchases details') }}</span></a></li>
+      
 
 
             </ul>

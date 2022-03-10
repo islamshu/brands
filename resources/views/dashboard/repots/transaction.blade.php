@@ -128,7 +128,7 @@
                     @else
                     <td>-</td>
                     @endif
-                    <td>@if($item->gender == 1) 'male' @elseif($item->gender == 2) 'female' @else '-' @endif</td>
+                    <td>@if($item->gender == 1) male @elseif($item->gender == 2) female @else - @endif</td>
                     <td>{{ App\Models\Branch::find($item->branch_id)->name_en }}</td>
                     <td>{{ $item->refreance_number }}</td>
 

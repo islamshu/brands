@@ -62,14 +62,28 @@ class HomeController extends Controller
     //     ->get();
     //     dd($best_offers);
 
-
-        $counts = array_count_values($offer);
-        arsort($counts);
-        $count_branch = array_count_values($branch);
-        arsort($count_branch);
+        if($offer != null){
+            $counts = array_count_values($offer);
+            arsort($counts);
+        }else{
+            $counts = 0;
+        }
+        if($branch != null){
+            $count_branch = array_count_values($branch);
+            arsort($count_branch);
+        }else{
+            $count_branch = 0;
+        }
+        if($most_nat != null){
+            $natonalitss = array_count_values($most_nat);
+            arsort($natonalitss);
+        }else{
+            $natonalitss = 0;
+        }
         
-        $natonalitss = array_count_values($most_nat);
-        arsort($natonalitss);
+     
+        
+   
         $most_offer_use = key($counts);
         $most_branch_use = key($count_branch);
         $most_natonalities_use = key($natonalitss);

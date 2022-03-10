@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Branch;
 use App\Models\Clinet;
 use App\Models\Offer;
 use App\Models\Transaction;
@@ -68,14 +69,7 @@ class HomeController extends Controller
             array_push($most_nat,$client->nationality);
         }
       
-    //    $best_offers =  DB::table('offers')
-    //     ->leftJoin('transactions','offers.id','=','transactions.offer_id')
-    //     ->selectRaw('offers.*, COALESCE(sum(transactions.offer_id),0) offer_id')
-    //     ->groupBy('offers.id')
-    //     ->orderBy('offer_id')
-    //     ->take(1)
-    //     ->get();
-    //     dd($best_offers);
+  
 
         if($offer != null){
             $counts = array_count_values($offer);
@@ -135,6 +129,28 @@ class HomeController extends Controller
 
         return view('dashboard.repots.sales', compact('most_natonalities_use','sale_count','request','branches','active_offer','finish_offer','trans_count','natonalits','most_offer_use','most_branch_use'));
     }
+    public function transaction(Request $request){
+        $query = Transaction::query()->where('vendor_id',auth()->id);
+        $query->when($request->referance, function ($q) use ($request) {  
+            return $q->where('refreance_number', $request->referance);
+        });
+        $query->when($request->branch_id, function ($q) use ($request) {
+            return $q->where('branch_id', $request->branch_id);
+        });
+        $query->when($request->from, function ($q) use ($request) {
+            if($request->to == null && $request->from != null){
+                return $q->whereBetween('created_at', [$request->from,Carbon::now()->format('Y-m-d')]);
+            }elseif($request->to != null && $request->from == null){
+                return $q->whereBetween('created_at', [Carbon::now()->format('Y-m-d'),$request->to,]);
+            }else{
+                return $q->whereBetween('created_at', [$request->from,$request->to,]);
+            }
+        });
+        $trans = $query->get();
+        $branches = Branch::where('vendor_id',auth()->user()->vendor_id)->get();
+        return view('dashboard.repots.transaction',compact('trans','branches'));
+    }
+    
    
     function lang($local){
 

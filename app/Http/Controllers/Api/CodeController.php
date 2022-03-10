@@ -184,6 +184,9 @@ class CodeController extends BaseController
                 $trans->branch_id = $request->branch_id;
                 $trans->enterprise_id = $enterprise;
                 $trans->refreance_number = $ofe->referance_no;
+                $trans->price = $offer->price;
+                $trans->offer_type = $offer->offertype->offer_type;
+                
                 $trans->save();
                 $vendor->sales += 1;
                 $vendor->save();

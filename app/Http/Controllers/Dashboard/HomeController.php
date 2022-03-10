@@ -148,7 +148,7 @@ class HomeController extends Controller
         });
         $trans = $query->get();
         $branches = Branch::where('vendor_id',auth()->user()->vendor_id)->get();
-        return view('dashboard.repots.transaction',compact('trans','branches'));
+        return view('dashboard.repots.transaction',compact('request','trans','branches'));
     }
     
    

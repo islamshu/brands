@@ -121,18 +121,7 @@ class UserController extends Controller
                 $per->save();
                 // $user->attachPermission($one_permission);
             }
-            $role = Role::find(3);
-
-            $user->attachRole($role);
-           $permissions= permission_role::where('role_id',$role->id)->get();
-            
-            foreach ($permissions as $one_permission) {
-                $per = new user_Permission();
-                $per->user_id = $user->id;
-                $per->permission_id = $one_permission->permission_id;
-                $per->save();
-                // $user->attachPermission($one_permission);
-            }
+          
              return response()->json(['icon' => 'success', 'title' => 'user created successfully'], $user ? 200 : 400);
         } else {
             return response()->json(['icon' => 'error', 'title' => $validator->getMessageBag()->first()], 400);

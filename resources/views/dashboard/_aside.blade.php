@@ -320,9 +320,14 @@ $lang = app()->getLocale();
                 <li class="menu-item " aria-haspopup="true"><a href="/{{ $lang }}/sales"
                         class="menu-link "><i class="menu-bullet menu-bullet-dot"><span></span></i><span
                             class="menu-text">{{ __('Total Transaction repots') }}</span></a></li>
-                            <li class="menu-item " aria-haspopup="true"><a href="/{{ $lang }}/transaction_repots"
+                            <li class="menu-item " aria-haspopup="true"><a href="/{{ $lang }}/branchs_repots"
                                 class="menu-link "><i class="menu-bullet menu-bullet-dot"><span></span></i><span
                                     class="menu-text">{{ __('Purchases details') }}</span></a></li>
+                                    <li class="menu-item " aria-haspopup="true"><a href="/{{ $lang }}/transaction_repots"
+                                        class="menu-link "><i class="menu-bullet menu-bullet-dot"><span></span></i><span
+                                            class="menu-text">{{ __('Branch repots') }}</span></a></li>
+
+                                    
       
 
 

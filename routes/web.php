@@ -66,7 +66,7 @@ Route::group([
         Route::get('upload-brands', "Dashboard\brandController@get_import")->name('get.import');
         Route::get('dawnload-brands', "Dashboard\brandController@download")->name('download.brands');
         Route::get('sales','Dashboard\HomeController@sales')->name('get_sales');
-        Route::get('transaction','Dashboard\HomeController@transaction')->name('get_sales');
+        Route::get('transaction_repots','Dashboard\HomeController@transaction')->name('get_sales');
 
         // Route::get('sales','Dashboard\HomeController@get_sales')->name('get_sales.index');
 

@@ -75,6 +75,7 @@ class HomeController extends Controller
             $count_branch = 0;
         }
         if($most_nat != null){
+            dd($most_nat);
             $natonalitss = array_count_values($most_nat);
             arsort($natonalitss);
         }else{

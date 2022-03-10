@@ -122,7 +122,7 @@
                     <td>{{ @$offer->offertype->offer_type }}</td>
                     <td>{{@$offer->offertype->price_after_discount }}</td>
                     <td>{{@$offer->offertype->discount_value }}</td>
-                    <td>{{$item->cerated_at}}</td>
+                    <td>{{$item->created_at}}</td>
                     @if($client->birth_date != null)
                     <td>{{ \Carbon\Carbon::parse($client->birth_date)->age}}</td>
                     @else

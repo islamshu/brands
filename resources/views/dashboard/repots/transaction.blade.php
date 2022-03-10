@@ -63,7 +63,7 @@
                                     Referance code
                                 </label>
                             </div>
-                          <input type="date" value="{{ $request->referance }}" class="form-control" name="referance">
+                          <input type="text" value="{{ $request->referance }}" class="form-control" name="referance">
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">

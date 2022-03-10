@@ -50,6 +50,9 @@ class RoleController extends Controller
         }elseif (Auth::user()->hasRole('Enterprises')) {
             $permission = Permission::where('is_admin',0)->get();
         }
+        elseif (Auth::user()->hasRole('Vendors')) {
+            $permission = Permission::where('is_vendor',1)->get();
+        }
 
         $uiPermission = [];
         foreach($permission as $index => $permission)
@@ -143,7 +146,7 @@ class RoleController extends Controller
              
         } elseif (Auth::user()->hasRole('Vendors')) {
             $role = Role::find($role_id);
-            $all_permissions = user_Permission::where('user_id', Auth::user()->id)->with('Permission')->get();
+            $permission = Permission::where('is_vendor',1)->get();
             
         }
 

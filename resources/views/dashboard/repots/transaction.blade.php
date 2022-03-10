@@ -91,20 +91,59 @@
         
     </form>
 </div>
-<div class="card card-custom">
+<div class="card card-docs mb-2">
+    <div class="card-body fs-6 py-15 px-10 py-lg-15 px-lg-15 text-gray-700">
+        <h2 class="mb-3">{{ __('All Vendors') }}</h2>
 
-    <div class="card-header">
-        <h3 class="card-title">
-            {{ __('Slaes Repots') }}
-        </h3>
-        <div class="card-toolbar">
-            <div class="example-tools justify-content-center">
-                <span class="example-toggle" data-toggle="tooltip" title="View code"></span>
-                <span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
-            </div>
-        </div>
+
+        <table class="datatable table datatable-bordered datatable-head-custom  table-row-bordered gy-5 gs-7"
+            id="kt_datatable">
+            <thead>
+                <tr class="fw-bold fs-6 text-gray-800">
+
+                    <th>{{ __('offer') }}</th>
+                    <th>{{ __('offer type') }}</th>
+                    <th>{{ __('price after discount') }}</th>
+                    <th>{{ __('discount percentage') }}</th>
+                    <th>{{ __('Crated at') }}</th>
+                    <th>{{ __('client age') }}</th>
+                    <th>{{ __('client gender') }}</th>
+                    <th>{{ __('branch') }}</th>
+                    <th>{{ __('Refreace code') }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($trans as $item)
+                @php
+                    $offer = App\Models\Offer::find($item->offer_id);
+                    $client = App\Models\Client::find($item->client_id);
+                @endphp
+                    <td>{{ @$offer->name_en }}</td>
+                    <td>{{ @$offer->offertype->offer_type }}</td>
+                    <td>{{@$offer->offertype->price_after_discount }}</td>
+                    <td>{{@$offer->offertype->discount_value }}</td>
+                    <td>{{$item->cerated_at}}</td>
+                    @if($client->birth_date != null)
+                    <td>{{ \Carbon\Carbon::parse($client->birth_date)->age}}</td>
+                    @else
+                    <td>-</td>
+                    @endif
+                    <td>{{@if($item->gender == 1) 'male' @elseif($item->gender == 2) 'female' @else '-' @endif}}</td>
+                    <td>{{ App\Models\Branch::find($item->branch_id)->name_en }}</td>
+                    <td>{{ $item->refreance_number }}</td>
+
+                   
+                    </tr>
+                @endforeach
+           
+
+
+            </tbody>
+
+        </table>
+
+
     </div>
-
 </div>
 
 

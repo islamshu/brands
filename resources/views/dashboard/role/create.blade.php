@@ -183,40 +183,8 @@
                     {{ __('Role') }}
                     </label>
                     <div class="input-group mb-3">
-                         <select class="custom-select type" id="type" name="name" @if ($errors->has('name'))
-                            style="border: 1px solid red"
-                            @endif
-                            >
-                            <option value="Vendors" @if (Session::get('name') == 'Vendors')
-                                selected="selected"
-                                @endif
-                                @if (!$errors->isEmpty())
-                                    @if (old('name') == 'Vendors')
-                                        selected="selected"
-                                    @endif
-                                @endif
-                                @if ($errors->has('name'))
-                                    style="border: 1px solid red"
-                                @endif
-                                >
-                                {{ __('Admin') }}
-                            </option>
-                            <option value="Branches" @if (Session::get('name') == 'Branches')
-                                selected="selected"
-                                @endif
-                                @if (!$errors->isEmpty())
-                                    @if (old('name') == 'Branches')
-                                        selected="selected"
-                                    @endif
-                                @endif
-                                @if ($errors->has('name'))
-                                    style="border: 1px solid red"
-                                @endif
-                                >
-                                {{ __('Branches') }}
-                            </option>
+                        <input type="text" name="name" value="{{ old('name') }}" class="form-control">
 
-                        </select> 
                         
                     </div>
                     @if ($errors->has('name'))

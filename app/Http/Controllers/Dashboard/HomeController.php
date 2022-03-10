@@ -93,7 +93,9 @@ class HomeController extends Controller
         }else{
             $most_branch_use = key($count_branch);
         }
+        dd($natonalitss);
         if($natonalitss == 0){
+            
             $most_natonalities_use = 0; 
         }else{
             $most_natonalities_use = key($natonalitss);

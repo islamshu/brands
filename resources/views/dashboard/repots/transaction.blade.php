@@ -78,7 +78,6 @@
 
                                 @endforeach
                             </select>
-                          <input type="date" value="{{ $request->branch_id }}" class="form-control" name="to">
                         </div>
                        
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>

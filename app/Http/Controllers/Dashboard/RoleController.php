@@ -98,6 +98,9 @@ class RoleController extends Controller
             if (Auth::user()->hasRole('Enterprises')) {
                 $new_role->ent_id = auth()->user()->ent_id;   
             }
+            if (Auth::user()->hasRole('Vendores')) {
+                $new_role->vendor_id = auth()->user()->vendor_id;   
+            }
 
             $new_role->save();
             // dd($new_role);

@@ -37,8 +37,8 @@ class HomeController extends Controller
         // if($request->from != null ||  $request->to != null ){
 
         // }
-        $trans = Transaction::where('vendor_id',698)->get();
-        $trans_count = Transaction::where('vendor_id',698)->count();
+        $trans = Transaction::where('vendor_id',auth()->user()->vendor_id)->get();
+        $trans_count = Transaction::where('vendor_id',auth()->user()->vendor_id)->count();
         $branch = [];
         $offer =[];
         $users =[];

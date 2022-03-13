@@ -30,6 +30,7 @@ class UserController extends Controller
      */
     public function index()
     {
+        dd(auth()->user()->vendor_id);
         
         if(Auth::user()->hasRole('Admin')){
             $users = User::get();

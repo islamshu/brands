@@ -30,11 +30,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        dd(auth()->user()->vendor_id);
         
         if(Auth::user()->hasRole('Admin')){
             $users = User::get();
-        }elseif(Auth::user()->hasRole('Enterprises') || auth()->user()->hasPermission('read-user')){
+        }elseif(Auth::user()->hasRole('Enterprises')){
             $users = User::where('ent_id',Auth::user()->ent_id)->get();
         }elseif(Auth::user()->hasRole('Vendors')){
             $users = User::whereRoleIs('Vendors')->where('vendor_id',auth()->user()->vendor_id)->get();

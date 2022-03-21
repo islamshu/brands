@@ -80,6 +80,11 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!--begin::Signin-->
 					<div class="login-form login-signin">
 						<!--begin::Form-->
+						@if (session('error'))
+							<div class="alert alert-danger">
+								{{ session('error') }}
+							</div>
+						@endif
 						<form class="form-auth-small m-t-20"
 							action="{{route('dashboard.auth.login',['locale'=>app()->getLocale()])}}" method="post">
 							@csrf

@@ -39,7 +39,7 @@ class HomeSLiderResourses extends JsonResource
         foreach($offers as $o){
             array_push($coll,$o);
         }
-        return $coll;
+        return   new PromostionOffer ($coll);
         
     
         

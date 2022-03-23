@@ -32,9 +32,7 @@ class HomeSLiderResourses extends JsonResource
     
        $of= Offer::whereIn('id',$array)->with('vendor')->whereHas('vendor', function ($q)  {
             $q->where('status', 'active');
-        })->where('status',1)->where('end_time','>=',Carbon::now())->with(['offerpromo' => function ($q){
-            $q->orderBy('sort', 'asc');
-        }])->get();
+        })->where('status',1)->where('end_time','>=',Carbon::now())->get();
         dd($of);
         
 

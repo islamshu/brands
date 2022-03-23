@@ -24,18 +24,18 @@ class HomeSLiderResourses extends JsonResource
         ];
     }
     public function get_offer($data){
-        $slider =HomesliderOffer::where('homeslider_id',$this->id)->with('offers')->get();
-        dd($slider);
+        $slider =HomesliderOffer::where('homeslider_id',$this->id)->get();
         $array =[];
         foreach($slider as $of){
             array_push($array,$of->offer_id);
         }
-        
-
-       $of= Offer::whereIn('id',$array)->with(['offerpromo' => function ($q){
-            $q->orderBy('sort', 'desc');
-        }])->get();
-        dd($of);
+    
+       $off= Offer::whereIn('id',$array)->with('vendor')->whereHas('vendor', function ($q)  {
+            $q->where('status', 'active');
+        })->where('status',1)->where('end_time','>=',Carbon::now())->get()->sortBy(function($query){
+            return $query->offerpromo->sort;
+        });
+        dd($off);
         
 
         

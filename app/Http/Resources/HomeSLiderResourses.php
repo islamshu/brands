@@ -35,7 +35,7 @@ class HomeSLiderResourses extends JsonResource
         })->where('status',1)->where('end_time','>=',Carbon::now())->get()->sortBy(function($query){
             return $query->offerpromo->sort;
         });
-        dd($off);
+        return $off;
         
 
         

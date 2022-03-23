@@ -29,11 +29,19 @@ class HomeSLiderResourses extends JsonResource
         foreach($slider as $of){
             array_push($array,$of->offer_id);
         }
+        $coll=[];
     
-       $off= Offer::whereIn('id',$array)->with('vendor')->whereHas('vendor', function ($q)  {
+      $offers=  Offer::whereIn('id',$array)->with('vendor')->whereHas('vendor', function ($q)  {
             $q->where('status', 'active');
-        })->where('status',1)->where('end_time','>=',Carbon::now())->get();
-        return $off;
+        })->where('status',1)->where('end_time','>=',Carbon::now())->get()->sortBy(function($query){
+            return $query->offerpromo->sort;
+        });
+        foreach($offers as $o){
+            array_push($coll,$o);
+        }
+        return $coll;
+        
+    
         
 
         

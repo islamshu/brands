@@ -24,7 +24,7 @@ class HomesliderOffer extends Model
     }
     public function offers()
     {
-        return $this->hasMany(Offer::class, 'offer_id');
+        return $this->hasMany(HomesliderOffer::class, 'offer_id');
 
     }
     public function homslider()

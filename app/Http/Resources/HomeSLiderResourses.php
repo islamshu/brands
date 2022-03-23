@@ -31,7 +31,7 @@ class HomeSLiderResourses extends JsonResource
         }
     
        $of= Offer::whereIn('id',$array)->with(['offerpromo' => function ($q){
-            $q->orderBy('sort', 'asc');
+            $q->orderBy('sort', 'desc');
         }])->get();
         dd($of);
         
